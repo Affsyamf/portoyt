@@ -24,3 +24,11 @@ hum.addEventListener('click', function ()  {
     hum.classList.toggle('hum-active');
     navMenu.classList.toggle('hidden');
 });
+
+//click not hamburger
+window.addEventListener('click', function (e) {
+    if(e.target != hum && e.target != navMenu) {
+        hum.classList.remove('hum-active');
+        navMenu.classList.add('hidden');
+    }
+});
