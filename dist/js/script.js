@@ -85,3 +85,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//email validation
+
+document.addEventListener('DOMContentLoaded', () => {
+  emailjs.init('a0uLjfXw9hl3DXqHu');
+
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_rse7v4f', 'template_zgb5cfo', form)
+      .then(() => {
+         alert('Pesan terkirim ✔');
+         form.reset();
+      })
+      .catch((err) => {
+         console.error('EmailJS error:', err);
+         alert('Gagal mengirim, cek console.');
+      });
+  });
+});
+
+
+     
